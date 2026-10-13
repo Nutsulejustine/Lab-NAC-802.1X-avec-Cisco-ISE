@@ -1,0 +1,15 @@
+# Scénario S2 : même compte, mot de passe VOLONTAIREMENT faux.
+# Résultat attendu : erreur MSCHAPv2 691, Access-Reject, port placé en VLAN 99.
+# Lancement : wpa_supplicant -i ens1 -c /etc/wpa_supplicant/mauvais.conf -D wired
+ctrl_interface=/var/run/wpa_supplicant
+eapol_version=2
+ap_scan=0
+network={
+    ssid="N/A"
+    key_mgmt=IEEE8021X
+    eap=PEAP
+    identity="employe1@lotietelecom.local"
+    password="MauvaisMotDePasse123"
+    phase2="auth=MSCHAPV2"
+    phase1="peaplabel=0"
+}

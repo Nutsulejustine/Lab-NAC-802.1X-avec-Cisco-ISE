@@ -1,0 +1,8 @@
+<!-- Réseau d'infrastructure : Cisco ISE, Active Directory et gestion du switch (Gi0/0).
+     Le pont virbr-lab (192.168.10.1) sert de passerelle ; les équipements ont des adresses statiques. -->
+<network>
+  <name>labnet</name>
+  <forward mode='nat'/>
+  <bridge name='virbr-lab' stp='on' delay='0'/>
+  <ip address='192.168.10.1' netmask='255.255.255.0'/>
+</network>

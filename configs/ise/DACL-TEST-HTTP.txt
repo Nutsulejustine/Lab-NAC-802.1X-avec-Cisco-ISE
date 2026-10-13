@@ -1,0 +1,2 @@
+permit tcp any host 192.168.10.40 eq 80
+deny ip any any

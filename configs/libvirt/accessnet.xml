@@ -1,0 +1,7 @@
+<!-- Réseau d'accès : pont de niveau 2 isolé, sans IP, sans DHCP, sans NAT.
+     Le client Debian ne peut joindre le reste du labo qu'à travers le port Gi0/1 du switch.
+     Après démarrage, lancer scripts/fix-eapol-bridge.sh pour laisser passer EAPOL. -->
+<network>
+  <name>accessnet</name>
+  <bridge name='virbr-access' stp='on' delay='0'/>
+</network>

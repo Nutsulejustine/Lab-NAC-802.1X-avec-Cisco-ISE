@@ -1,0 +1,18 @@
+# Profil 802.1X filaire PEAP-MSCHAPv2 - compte it1 (groupe IT -> VLAN 15)
+# Copier vers /etc/wpa_supplicant/it1.conf puis remplacer CHANGE_ME.
+# Lancement : wpa_supplicant -i ens1 -c /etc/wpa_supplicant/it1.conf -D wired
+ctrl_interface=/var/run/wpa_supplicant
+eapol_version=2
+ap_scan=0
+network={
+    ssid="N/A"
+    key_mgmt=IEEE8021X
+    eap=PEAP
+    fast_reauth=0
+    identity="it1@lotietelecom.local"
+    password="CHANGE_ME"
+    phase2="auth=MSCHAPV2"
+    phase1="peaplabel=0"
+    # Hors labo, valider le certificat du serveur ISE :
+    # ca_cert="/etc/ssl/certs/ise-ca.pem"
+}
